@@ -4,6 +4,7 @@ from .consts import const
 
 
 ## time-dependent RungeKutta 4th order
+
 def RungeKutta (f,arr,t,func_n):#f is the vector field function: arraydot=f(array), array is the vector (x,y,z)
     k1=f(arr,t,func_n)*const.dt
     k2=f(arr+0.5*k1,t+0.5*const.dt,func_n)*const.dt
@@ -24,20 +25,12 @@ def Lorenz(a,t,func_n): # 'a' is the array of system state, i.e (x,y,z), func_n:
 def z_fixed(t):
     return 23.4 + np.sin(const.w*t)
 
-def funcya(x,y,z,r):
-    ydot = x*r-x*z-y
-    return ydot
-
-def funcyc(x,y,z,r):
-    ydot = x*r-y-x*z
-    return ydot
 
 def check_func(arr_z,tl,tf):
     for i in range(3800):
         if (np.abs(arr_z[int((tf-i)*1000)] - z_fixed(tl-i)) > const.check_radius):
             return 1
     return 0
-
 
 def simulate(x0,y0,z0,func_n):
     

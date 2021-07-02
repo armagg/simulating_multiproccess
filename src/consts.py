@@ -1,4 +1,14 @@
 from dataclasses import dataclass
+import numpy as np
+
+
+def funcya(x,y,z,r):
+    ydot = x*r-x*z-y
+    return ydot
+
+def funcyc(x,y,z,r):
+    ydot = x*r-y-x*z
+    return ydot
 
 @dataclass
 class Constants:
