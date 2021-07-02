@@ -30,7 +30,7 @@ if __name__ == "__main__":
     results = []
     with ProcessPoolExecutor(max_workers = 4) as executor:
         for arg in args:
-            results.append(executor.submit(function, *arg))
+            results.append(executor.submit(simulate, *arg))
 
         
 
