@@ -103,7 +103,7 @@ def simulate(x0,y0,z0,func_n):
         
         time = time + const.tfinal
         
-        if (i>1):
+        if (i>2):
             break
         
     if (xs[-1]>0):
